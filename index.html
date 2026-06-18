@@ -4,18 +4,18 @@
   <!-- Basic page setup -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio website of Karan Veer Singh, BTech CSE graduate and web developer." />
+  <meta name="author" content="Karan Veer Singh" />
   <title>Karan Veer Singh | Portfolio</title>
 
   <!-- CSS: all page styling lives in this style tag -->
   <style>
-    /* Reset: removes default browser spacing */
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
-    /* Theme variables: change these colors to customize the site */
     :root {
       --bg: #0d0f12;
       --surface: #171a20;
@@ -28,7 +28,6 @@
       --shadow: rgba(0, 0, 0, 0.35);
     }
 
-    /* Body: sets the main font, colors, and background */
     body {
       font-family: Arial, Helvetica, sans-serif;
       line-height: 1.6;
@@ -38,13 +37,11 @@
         var(--bg);
     }
 
-    /* Reusable layout wrapper */
     .container {
       width: min(1120px, calc(100% - 32px));
       margin: 0 auto;
     }
 
-    /* Header: top navigation area */
     header {
       position: sticky;
       top: 0;
@@ -87,7 +84,6 @@
       color: var(--gold-soft);
     }
 
-    /* Mobile menu button */
     .menu-button {
       display: none;
       border: 1px solid var(--border);
@@ -98,7 +94,6 @@
       cursor: pointer;
     }
 
-    /* Hero: first section visitors see */
     .hero {
       min-height: calc(100vh - 72px);
       display: grid;
@@ -142,7 +137,6 @@
       gap: 14px;
     }
 
-    /* Buttons: links styled as actions */
     .button {
       display: inline-flex;
       align-items: center;
@@ -170,7 +164,6 @@
       transform: translateY(-2px);
     }
 
-    /* Profile card: quick personal summary */
     .profile-card {
       border: 1px solid var(--border);
       border-radius: 8px;
@@ -198,23 +191,28 @@
       margin-bottom: 8px;
     }
 
-    .profile-card p {
+    .profile-card p,
+    .quick-list,
+    .section-title p,
+    .about-box p,
+    .timeline-card p,
+    .hobby,
+    .skill p,
+    .project-card p,
+    .contact-panel p {
       color: var(--muted);
-      margin-bottom: 18px;
     }
 
     .quick-list {
       display: grid;
       gap: 10px;
       list-style: none;
-      color: var(--muted);
     }
 
     .quick-list strong {
       color: var(--text);
     }
 
-    /* Sections: shared spacing and headings */
     section {
       padding: 78px 0;
     }
@@ -224,9 +222,12 @@
       margin-bottom: 30px;
     }
 
-    .section-title span {
+    .section-title span,
+    .timeline-card span,
+    .hobby strong,
+    .skill h3,
+    .tags li {
       color: var(--gold-soft);
-      font-weight: 700;
     }
 
     .section-title h2 {
@@ -236,11 +237,9 @@
     }
 
     .section-title p {
-      color: var(--muted);
       margin-top: 12px;
     }
 
-    /* About and background sections */
     .about-box {
       border-left: 3px solid var(--gold);
       padding: 22px 24px;
@@ -248,25 +247,39 @@
     }
 
     .about-box p {
-      color: var(--muted);
       max-width: 820px;
     }
 
-    .background-grid {
+    .background-grid,
+    .projects-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
     }
 
-    .timeline-card {
+    .hobbies-grid,
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .timeline-card,
+    .skill,
+    .hobby,
+    .project-card {
       border: 1px solid var(--border);
       border-radius: 8px;
-      padding: 22px;
       background: var(--surface);
     }
 
+    .timeline-card,
+    .skill,
+    .hobby {
+      padding: 18px;
+    }
+
     .timeline-card span {
-      color: var(--gold-soft);
       font-size: 0.85rem;
       font-weight: 700;
       text-transform: uppercase;
@@ -276,81 +289,18 @@
       margin: 8px 0;
     }
 
-    .timeline-card p {
-      color: var(--muted);
-    }
-
-    /* Hobbies section */
-    .hobbies-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-    }
-
     .hobby {
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 18px;
-      color: var(--muted);
       background: rgba(255, 255, 255, 0.035);
     }
 
     .hobby strong {
       display: block;
-      color: var(--gold-soft);
       margin-bottom: 6px;
-    }
-
-    /* Skills section */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-    }
-
-    .skill {
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 18px;
-      background: var(--surface);
     }
 
     .skill h3 {
-      color: var(--gold-soft);
       font-size: 1rem;
       margin-bottom: 6px;
-    }
-
-    .skill p {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    /* Projects section */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    /* Quote section */
-    .quote-box {
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 34px;
-      background: linear-gradient(135deg, rgba(212, 175, 55, 0.14), rgba(255, 255, 255, 0.035));
-    }
-
-    .quote-box blockquote {
-      color: var(--text);
-      font-size: clamp(1.4rem, 3vw, 2.3rem);
-      line-height: 1.25;
-      max-width: 900px;
-    }
-
-    .quote-box p {
-      color: var(--muted);
-      margin-top: 14px;
     }
 
     .project-card {
@@ -358,10 +308,7 @@
       min-height: 260px;
       flex-direction: column;
       justify-content: space-between;
-      border: 1px solid var(--border);
-      border-radius: 8px;
       padding: 22px;
-      background: var(--surface);
       transition: transform 180ms ease, border-color 180ms ease;
     }
 
@@ -375,7 +322,6 @@
     }
 
     .project-card p {
-      color: var(--muted);
       margin-bottom: 18px;
     }
 
@@ -390,11 +336,23 @@
       border: 1px solid var(--border);
       border-radius: 999px;
       padding: 5px 10px;
-      color: var(--gold-soft);
       font-size: 0.8rem;
     }
 
-    /* Contact section */
+    .quote-box {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 34px;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.14), rgba(255, 255, 255, 0.035));
+    }
+
+    .quote-box blockquote {
+      color: var(--text);
+      font-size: clamp(1.4rem, 3vw, 2.3rem);
+      line-height: 1.25;
+      max-width: 900px;
+    }
+
     .contact-panel {
       display: flex;
       align-items: center;
@@ -407,12 +365,10 @@
     }
 
     .contact-panel p {
-      color: var(--muted);
       max-width: 620px;
       margin-top: 8px;
     }
 
-    /* Footer: bottom copyright area */
     footer {
       border-top: 1px solid var(--border);
       padding: 26px 0;
@@ -420,7 +376,6 @@
       text-align: center;
     }
 
-    /* Responsive design: adjusts layout for tablets and phones */
     @media (max-width: 860px) {
       .menu-button {
         display: inline-flex;
@@ -444,17 +399,14 @@
       }
 
       .hero-grid,
-      .projects-grid {
+      .projects-grid,
+      .background-grid {
         grid-template-columns: 1fr;
       }
 
       .skills-grid,
       .hobbies-grid {
         grid-template-columns: repeat(2, 1fr);
-      }
-
-      .background-grid {
-        grid-template-columns: 1fr;
       }
 
       .contact-panel {
@@ -484,7 +436,7 @@
   <!-- Header: contains the logo and navigation links -->
   <header>
     <nav class="container" aria-label="Main navigation">
-      <a class="logo" href="#top">Your Name</a>
+      <a class="logo" href="#top">Karan Veer Singh</a>
       <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="navLinks">
         Menu
       </button>
@@ -505,10 +457,10 @@
       <div class="container hero-grid">
         <div>
           <p class="eyebrow">Personal Portfolio</p>
-          <h1>Hi, I'm Your Name.</h1>
+          <h1>Hi, I'm Karan Veer Singh.</h1>
           <p>
-            I am a student and beginner developer who enjoys learning, creating, and
-            turning ideas into simple websites and projects.
+            I completed my BTech in Computer Science and Engineering in 2024, and I enjoy
+            learning, creating, and working with people to turn ideas into useful projects.
           </p>
           <div class="actions">
             <a class="button primary" href="#projects">View Projects</a>
@@ -518,13 +470,13 @@
 
         <!-- Profile card: quick details visitors can scan -->
         <aside class="profile-card" aria-label="Quick profile details">
-          <div class="avatar" aria-hidden="true">YN</div>
+          <div class="avatar" aria-hidden="true">KVS</div>
           <h2>Web Developer</h2>
-          <p>Beginner-friendly placeholder text you can replace with your own details.</p>
+          <p>BTech CSE graduate with strong communication, leadership, and teamwork skills.</p>
           <ul class="quick-list">
-            <li><strong>From:</strong> Your City / Hometown</li>
-            <li><strong>Studying:</strong> Your Course or Major</li>
-            <li><strong>Email:</strong> hello@example.com</li>
+            <li><strong>From:</strong> Udhampur, Jammu and Kashmir</li>
+            <li><strong>Education:</strong> BTech in CSE, 2024</li>
+            <li><strong>Email:</strong> kvsb8099@gmail.com</li>
           </ul>
         </aside>
       </div>
@@ -536,14 +488,14 @@
         <div class="section-title">
           <span>About</span>
           <h2>A little about me</h2>
-          <p>Use this section to explain who you are, what you enjoy, and what makes you unique.</p>
+          <p>Computer Science graduate, learner, and team-focused problem solver.</p>
         </div>
         <div class="about-box">
           <p>
-            I am a curious learner who enjoys exploring technology, design, and creative
-            problem solving. This portfolio is a place to share my journey, my interests,
-            and the skills I am building one step at a time. Replace this paragraph with
-            your real introduction, personality, and goals.
+            I am Karan Veer Singh, a BTech Computer Science and Engineering graduate from
+            the class of 2024. I enjoy exploring technology, solving problems, and working
+            with others. I bring strong communication skills, leadership qualities, and a
+            great teamwork mindset to every project I take on.
           </p>
         </div>
       </div>
@@ -555,23 +507,23 @@
         <div class="section-title">
           <span>Background</span>
           <h2>My journey so far</h2>
-          <p>Update these cards with your school, college, achievements, or personal story.</p>
+          <p>My education, hometown, and motivation for starting in computer science.</p>
         </div>
         <div class="background-grid">
           <article class="timeline-card">
             <span>Education</span>
-            <h3>Your School or College</h3>
-            <p>Write about what you are studying, your favorite subjects, or academic goals.</p>
+            <h3>BTech in Computer Science and Engineering</h3>
+            <p>Graduated in 2024 with an interest in technology, problem solving, and software development.</p>
           </article>
           <article class="timeline-card">
             <span>Origin</span>
-            <h3>Where I Come From</h3>
-            <p>Share your hometown, culture, family values, or anything that shaped you.</p>
+            <h3>Udhampur, Jammu and Kashmir</h3>
+            <p>I come from Udhampur in Jammu and Kashmir, a place that has shaped my values, discipline, and perspective.</p>
           </article>
           <article class="timeline-card">
             <span>Journey</span>
             <h3>Why I Started</h3>
-            <p>Explain what inspired you to learn coding, design, business, or your field.</p>
+            <p>I started this journey because I have a great interest in computer science and its real-world applications.</p>
           </article>
         </div>
       </div>
@@ -587,20 +539,20 @@
         </div>
         <div class="hobbies-grid">
           <div class="hobby">
-            <strong>Music</strong>
-            Listening to songs, discovering artists, or playing an instrument.
-          </div>
-          <div class="hobby">
             <strong>Sports</strong>
-            Playing, watching, or following your favorite sport or team.
+            Playing and watching sports because they build energy, discipline, and teamwork.
           </div>
           <div class="hobby">
-            <strong>Reading</strong>
-            Books, articles, stories, or topics that inspire you.
+            <strong>Travelling</strong>
+            Exploring new places, meeting people, and learning from different experiences.
           </div>
           <div class="hobby">
-            <strong>Creativity</strong>
-            Photography, drawing, editing, writing, or making things.
+            <strong>Creative Blogs</strong>
+            Writing creative blogs to share thoughts, ideas, and personal experiences.
+          </div>
+          <div class="hobby">
+            <strong>Technology</strong>
+            Learning about computer science, software, and practical technology applications.
           </div>
         </div>
       </div>
@@ -612,24 +564,24 @@
         <div class="section-title">
           <span>Skills</span>
           <h2>Tools and technologies</h2>
-          <p>Change these cards to match the skills you want employers or clients to notice.</p>
+          <p>Strengths that help me communicate, lead, collaborate, and keep learning.</p>
         </div>
         <div class="skills-grid">
           <article class="skill">
-            <h3>HTML</h3>
-            <p>Building the structure of clean web pages.</p>
+            <h3>Communication</h3>
+            <p>Explaining ideas clearly and listening carefully in group discussions.</p>
           </article>
           <article class="skill">
-            <h3>CSS</h3>
-            <p>Styling layouts, colors, spacing, and responsive designs.</p>
+            <h3>Leadership</h3>
+            <p>Taking responsibility, guiding teammates, and staying focused on goals.</p>
           </article>
           <article class="skill">
-            <h3>JavaScript</h3>
-            <p>Adding interaction and behavior to websites.</p>
+            <h3>Teamwork</h3>
+            <p>Working well with others and contributing positively to team projects.</p>
           </article>
           <article class="skill">
-            <h3>Git</h3>
-            <p>Tracking code changes and managing projects.</p>
+            <h3>Computer Science</h3>
+            <p>Learning and applying concepts from my BTech CSE background.</p>
           </article>
         </div>
       </div>
@@ -641,7 +593,7 @@
         <div class="section-title">
           <span>Projects</span>
           <h2>Selected work</h2>
-          <p>Add your own project names, descriptions, and links when you are ready.</p>
+          <p>Projects that reflect my interest in practical technology applications.</p>
         </div>
         <div class="projects-grid">
           <article class="project-card">
@@ -657,24 +609,24 @@
           </article>
           <article class="project-card">
             <div>
-              <h3>Task Tracker</h3>
-              <p>A simple app idea for adding, completing, and organizing daily tasks.</p>
+              <h3>Diabetes Prediction Model</h3>
+              <p>A machine learning project focused on predicting diabetes risk from health-related data.</p>
             </div>
             <ul class="tags">
-              <li>UI</li>
-              <li>Forms</li>
-              <li>Local Data</li>
+              <li>Machine Learning</li>
+              <li>Healthcare</li>
+              <li>Prediction</li>
             </ul>
           </article>
           <article class="project-card">
             <div>
-              <h3>Landing Page</h3>
-              <p>A clean page concept for presenting a product, service, or event.</p>
+              <h3>Plant Disease Prediction Model</h3>
+              <p>A prediction model designed to help identify plant diseases and support better crop care.</p>
             </div>
             <ul class="tags">
-              <li>Design</li>
-              <li>Responsive</li>
-              <li>Layout</li>
+              <li>Machine Learning</li>
+              <li>Agriculture</li>
+              <li>Computer Vision</li>
             </ul>
           </article>
         </div>
@@ -685,8 +637,7 @@
     <section id="quote">
       <div class="container">
         <div class="quote-box">
-          <blockquote>"Small steps every day lead to big changes over time."</blockquote>
-          <p>Replace this with your favorite quote, motto, or personal belief.</p>
+          <blockquote>"If you set your goals ridiculously high you will fail above everyone else's success."</blockquote>
         </div>
       </div>
     </section>
@@ -697,12 +648,12 @@
         <div class="contact-panel">
           <div>
             <h2>Let's work together</h2>
-            <p>
-              Replace this email address with your own, then add links to LinkedIn,
-              GitHub, Instagram, or any profile you want to share.
-            </p>
+            <p>You can contact me by email or connect with me on LinkedIn.</p>
           </div>
-          <a class="button primary" href="mailto:kvsb8099@gmail.com">Email Me</a>
+          <div class="actions">
+            <a class="button primary" href="mailto:kvsb8099@gmail.com">Email Me</a>
+            <a class="button secondary" href="https://www.linkedin.com/in/karanveer72/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
         </div>
       </div>
     </section>
@@ -711,16 +662,14 @@
   <!-- Footer: small ending note -->
   <footer>
     <div class="container">
-      <p>&copy; <span id="year"></span> Your Name. All rights reserved.</p>
+      <p>&copy; <span id="year"></span> Karan Veer Singh. All rights reserved.</p>
     </div>
   </footer>
 
   <!-- JavaScript: all page behavior lives in this script tag -->
   <script>
-    // Shows the current year automatically in the footer.
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Opens and closes the mobile navigation menu.
     const menuButton = document.getElementById("menuButton");
     const navLinks = document.getElementById("navLinks");
 
@@ -729,7 +678,6 @@
       menuButton.setAttribute("aria-expanded", isOpen);
     });
 
-    // Closes the mobile menu after a visitor clicks a link.
     navLinks.addEventListener("click", (event) => {
       if (event.target.tagName === "A") {
         navLinks.classList.remove("show");
